@@ -2,7 +2,7 @@ const MongoClient = require('mongodb').MongoClient
 const defer = require('lodash/defer')
 let db
 
-module.exports = function mongoConnect (url, cb) {
+function init (url, cb) {
   const mongoUrl = `${url}?authMechanism=SCRAM-SHA-1`
   if (!db) {
     MongoClient.connect(mongoUrl, (err, database) => {
@@ -13,3 +13,9 @@ module.exports = function mongoConnect (url, cb) {
     defer(() => cb(null, db))
   }
 }
+
+function getDb () {
+  return db
+}
+
+module.exports = {init, getDb}

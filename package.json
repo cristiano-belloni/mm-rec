@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tape test/**/*.js",
     "dev": "cross-env NODE_ENV=development UV_THREADPOOL_SIZE=100 node ./server",
     "lint": "standard"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.0.1",
     "body-parser": "^1.15.2",
+    "bunyan": "^1.8.1",
     "config": "^1.21.0",
     "express": "^4.14.0",
     "lodash": "^4.15.0",
@@ -21,6 +23,7 @@
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-tap-event-plugin": "^1.0.0",
+    "request": "^2.74.0",
     "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
@@ -41,11 +44,14 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "node-sass": "^3.8.0",
     "postcss-loader": "^0.9.1",
+    "proxyquire": "^1.7.10",
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.4",
     "sass-loader": "^4.0.0",
+    "sinon": "^1.17.5",
     "standard": "^7.1.2",
     "style-loader": "^0.13.1",
+    "tape": "^4.6.0",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.12.2"
