@@ -1,21 +1,30 @@
 import React from 'react'
 import {Card, CardTitle, CardText} from 'material-ui/Card'
 
-const CompanyCard = () => (
+function renderStory (story, idx) {
+  return <p key={idx}>{story.body}</p>
+}
+
+const CompanyCard = (props) => (
   <Card>
     <CardTitle
-      title='Microsoft'
-      subtitle='MSFT'
+      title={props.companyName}
+      subtitle={props.companyTicker}
     />
     <CardText
       children={
         <div>
-          <p>Story 1</p>
-          <p>Story 2</p>
+        {props.stories ? props.stories.map(renderStory) : null}
         </div>
       }
     />
   </Card>
 )
+
+/*CompanyCard.propTypes = {
+  companyName: React.PropTypes.string.isRequired,
+  companyTicker: React.PropTypes.string.isRequired,
+  stories: React.PropTypes.arrayOf(React.PropTypes.string).isRequired
+}*/
 
 export default CompanyCard
