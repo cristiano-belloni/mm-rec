@@ -25,7 +25,7 @@ function renderSentimentIcon (sentiment) {
   return (
     <FontIcon
       color={color}
-      className="material-icons">
+      className='material-icons'>
       {iconName}
     </FontIcon>
   )

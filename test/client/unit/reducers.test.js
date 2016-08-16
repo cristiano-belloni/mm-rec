@@ -8,9 +8,7 @@ import {
   FETCHING_COMPANY_LIST_END,
   FETCHING_COMPANY_START,
   FETCHING_COMPANY_END,
-  SET_ALT_MESSAGE,
   SET_ERROR_ALERT,
-  CLEAR_ALT_MESSAGE,
   CLEAR_ERROR_ALERT
 } from '../../../client/actions'
 
@@ -36,20 +34,6 @@ test('currentCompany reducer', function (t) {
   t.deepEqual(newState, { an: 'object' })
   newState = currentCompany({ another: 'object' }, { type: 'UNKNOWN_ACTION' })
   t.deepEqual(newState, { another: 'object' })
-})
-
-test('altMessage reducer', function (t) {
-  const altMessage = reducers.__get__('altMessage')
-  let newState
-  t.plan(4)
-  newState = altMessage(undefined, { type: 'UNKNOWN_ACTION' })
-  t.equal(newState, null)
-  newState = altMessage(undefined, { type: SET_ALT_MESSAGE, message: 'a message' })
-  t.equal(newState, 'a message')
-  newState = altMessage('another message', { type: 'UNKNOWN_ACTION' })
-  t.equal(newState, 'another message')
-  newState = altMessage('to be cleared', { type: CLEAR_ALT_MESSAGE })
-  t.equal(newState, null)
 })
 
 test('errorAlert reducer', function (t) {

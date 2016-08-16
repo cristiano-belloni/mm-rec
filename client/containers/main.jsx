@@ -29,7 +29,6 @@ class Main extends React.Component {
     const priceUnits = get(this.props, 'currentCompany.priceUnits')
     const ticker = priceUnits ? `${companyTicker} (${companyPrice} ${priceUnits.split(':')[1]})` : companyTicker
     const stories = get(this.props, 'currentCompany.stories')
-    const altMessage = get(this.props, 'altMessage')
 
     return (
       <div className={style.main}>
@@ -46,7 +45,6 @@ class Main extends React.Component {
           companyName={companyName}
           companyTicker={ticker}
           stories={stories}
-          altMessage={''}
         />
       </div>
     )
@@ -56,5 +54,5 @@ class Main extends React.Component {
 function mapStateToProps (state) {
   return state
 }
-// fetchCompanyList componentWillMount
+
 export default connect(mapStateToProps)(Main)

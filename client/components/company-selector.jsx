@@ -15,17 +15,18 @@ function renderMenuItem (itemObj, idx) {
 const CompanySelector = (props) => {
   console.log(props)
   return (
-  <SelectField
-    labelStyle={{color: '#fff'}}
-    hintStyle={{color: '#fff'}}
-    value={props.currentCompany}
-    onChange={props.onChange}
-    maxHeight={props.maxHeight}
-    hintText={'Select company'}
-  >
-    {props.companies.map(renderMenuItem)}
-  </SelectField>
-)}
+    <SelectField
+      labelStyle={{color: '#fff'}}
+      hintStyle={{color: '#fff'}}
+      value={props.currentCompany}
+      onChange={props.onChange}
+      maxHeight={props.maxHeight}
+      hintText={'Select company'}
+    >
+      {props.companies.map(renderMenuItem)}
+    </SelectField>
+  )
+}
 
 CompanySelector.propTypes = {
   onChange: React.PropTypes.func,

@@ -19,14 +19,6 @@ function renderStories (stories) {
 }
 
 function renderCompany (props) {
-  if (props.altMessage) {
-    return (
-      <div className={styles['card-contents']}>
-        {props.altMessage}
-      </div>
-    )
-  }
-
   const stories = renderStories(props.stories)
   return (
     <div className={styles['card-contents']}>

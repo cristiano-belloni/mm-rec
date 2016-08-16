@@ -6,9 +6,7 @@ import {
   FETCHING_COMPANY_LIST_END,
   FETCHING_COMPANY_START,
   FETCHING_COMPANY_END,
-  SET_ALT_MESSAGE,
   SET_ERROR_ALERT,
-  CLEAR_ALT_MESSAGE,
   CLEAR_ERROR_ALERT
 } from './actions'
 
@@ -52,17 +50,6 @@ function isCompanyFetching (state = 0, action) {
   }
 }
 
-function altMessage (state = null, action) {
-  switch (action.type) {
-    case SET_ALT_MESSAGE:
-      return action.message
-    case CLEAR_ALT_MESSAGE:
-      return null
-    default:
-      return state
-  }
-}
-
 function errorAlert (state = null, action) {
   switch (action.type) {
     case SET_ERROR_ALERT:
@@ -79,7 +66,6 @@ const store = combineReducers({
   currentCompany,
   isMainFetching,
   isCompanyFetching,
-  altMessage,
   errorAlert
 })
 

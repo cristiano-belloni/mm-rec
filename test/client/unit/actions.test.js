@@ -38,22 +38,10 @@ test('updateCompany', function (t) {
   t.deepEqual(updateCompanyList(1), { type: actions.UPDATE_COMPANY, companyObj: 1 })
 })
 
-test('setAltMsg', function (t) {
-  const setAltMsg = actions.__get__('setAltMsg')
-  t.plan(1)
-  t.deepEqual(setAltMsg(1), { type: actions.SET_ALT_MESSAGE, message: 1 })
-})
-
 test('setAlert', function (t) {
   const setAlert = actions.__get__('setAlert')
   t.plan(1)
   t.deepEqual(setAlert(1), { type: actions.SET_ERROR_ALERT, error: 1 })
-})
-
-test('clearAltMsg', function (t) {
-  const clearAltMsg = actions.__get__('clearAltMsg')
-  t.plan(1)
-  t.deepEqual(clearAltMsg(), { type: actions.CLEAR_ALT_MESSAGE })
 })
 
 test('clearAlert', function (t) {
