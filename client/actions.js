@@ -52,6 +52,8 @@ function clearAlert () {
 export function fetchCompanyList () {
   return (dispatch) => {
     dispatch(serverBusyForList())
+    dispatch(clearAlert())
+    dispatch(clearAltMsg())
     window.fetch('/companies')
       .then(response => response.json())
       .then(data => {
@@ -60,23 +62,32 @@ export function fetchCompanyList () {
       })
       .catch(error => {
         dispatch(serverFreeForList())
-        dispatch(setAlert(error))
+        const errStr = `There has been a problem downloading companies: ${error}`
+        dispatch(setAlert(errStr))
+        dispatch(setAltMsg(errStr))
       })
   }
 }
 
 export function fetchCompany (companyTicker) {
-  return (dispatch) => {
+  return (dispatch, getState) => {
     dispatch(serverBusyForCompany())
+    dispatch(clearAlert())
+    dispatch(clearAltMsg())
     window.fetch(`/companies/${companyTicker}`)
       .then(response => response.json())
       .then(data => {
+        const updatedData = data
+        updatedData.name = getState().companyList.filter(company => company.tickerCode === companyTicker)[0].name
+        updatedData.tickerCode = companyTicker
         dispatch(serverFreeForCompany())
-        dispatch(updateCompany(data))
+        dispatch(updateCompany(updatedData))
       })
       .catch(error => {
         dispatch(serverFreeForCompany())
-        dispatch(setAlert(error))
+        const errStr = `There has been a problem downloading company ${companyTicker}: ${error}`
+        dispatch(setAlert(errStr))
+        dispatch(setAltMsg(errStr))
       })
   }
 }

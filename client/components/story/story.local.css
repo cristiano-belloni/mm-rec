@@ -1,0 +1,19 @@
+.story-container {
+    width: 100%;
+    padding-bottom: 4px;
+}
+
+.story-body {
+    width: calc(100% - 64px);
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.story-sentiment {
+    width: 64px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: sub;
+}

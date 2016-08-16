@@ -4,7 +4,6 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 import { Provider } from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
 import { createStore, applyMiddleware } from 'redux'
-import { fetchSymbolsIfNeeded, setGeometry } from './actions'
 import rootReducer from './reducers'
 import Main from './containers/main'
 
