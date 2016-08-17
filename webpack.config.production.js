@@ -36,8 +36,17 @@ module.exports = {
   },
   postcss: [autoprefixer],
   plugins: [
+    new ExtractTextPlugin('style.css', { allChunks: true }),
+    new webpack.DefinePlugin({
+      'process.env':{
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
     new webpack.ProvidePlugin({
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: { warnings: false }
     }),
     new ExtractTextPlugin('style.css', { allChunks: true })
   ]

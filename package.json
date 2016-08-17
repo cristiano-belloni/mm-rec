@@ -7,7 +7,7 @@
     "test": "NODE_ENV=test babel-tape-runner \"test/**/*.js\"",
     "dev": "cross-env NODE_ENV=development UV_THREADPOOL_SIZE=100 node ./server",
     "lint": "standard",
-    "start": "npm run build && cross-env NODE_ENV=production node ./server",
+    "start": "NODE_ENV=production npm run build && cross-env NODE_ENV=production node ./server",
     "build": "mkdir build && npm run build-prod",
     "build-prod": "cp client/index.html build/ && NODE_ENV='production' webpack --config webpack.config.production.js",
     "clean": "rimraf ./build",
