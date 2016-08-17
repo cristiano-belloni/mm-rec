@@ -28,6 +28,6 @@ if (process.env.NODE_ENV === 'development') {
   })
 }
 
-router.use('/build', express.static(path.join(__dirname + '/../build')))
+router.use('/build', express.static(path.join(__dirname, '/../build')))
 
 module.exports = router
