@@ -1,5 +1,7 @@
 ## MergeMarket dev test
 
+![Hello](mm.gif)
+
 Made with Express, React and Redux with Babel and Webpack.
 
 ### How to start the project
