@@ -1,4 +1,5 @@
 {
   "mongoUrl": null,
-  "priceUrl": "http://mm-recruitment-stock-price-api.herokuapp.com/company"
+  "priceUrl": "http://mm-recruitment-stock-price-api.herokuapp.com/company",
+  "port": 8888
 }

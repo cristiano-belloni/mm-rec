@@ -17,14 +17,15 @@ if (!module.parent) {
       process.exit(2)
     }
     const app = express()
+    const port = config.get('port')
 
     app.use('/', router)
-    app.listen(8888, '0.0.0.0', function (err) {
+    app.listen(port, '0.0.0.0', function (err) {
       if (err) {
         log.error(err)
         return
       }
-      log.info('Listening at http://0.0.0.0:8888')
+      log.info(`Listening on port ${port}`)
     })
   })
 }

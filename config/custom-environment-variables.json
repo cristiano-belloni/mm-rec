@@ -1,3 +1,4 @@
 {
-  "mongoUrl": "MM_MONGO_URL"
+  "mongoUrl": "MM_MONGO_URL",
+  "port": "PORT"
 }

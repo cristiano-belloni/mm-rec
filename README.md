@@ -12,13 +12,15 @@ provided via an environment variable.
 
 #### Dev mode 
 
-To run the project locally in development mode on port 8888, after `npm i`, invoke:
+To run the project locally in development mode, after `npm i`, invoke:
 
 `MM_MONGO_URL='mongodb://<user>:<password>@ds037551.mongolab.com:37551/mm-recruitment' npm run dev`
 
 with the user and password provided in the homework file.
 
 Development mode will provide hot reload, file watching and redbox error alerts.
+
+Default port for both develop and prod is 8888. A different port can be specified using the `PORT` env variable.
 
 #### Prod mode 
 
