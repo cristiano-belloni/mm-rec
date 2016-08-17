@@ -13,7 +13,6 @@ function renderMenuItem (itemObj, idx) {
 }
 
 const CompanySelector = (props) => {
-  console.log(props)
   return (
     <SelectField
       labelStyle={{color: '#fff'}}
@@ -30,7 +29,7 @@ const CompanySelector = (props) => {
 
 CompanySelector.propTypes = {
   onChange: React.PropTypes.func,
-  currentCompany: React.PropTypes.object,
+  currentCompany: React.PropTypes.string,
   companies: React.PropTypes.arrayOf(
     React.PropTypes.shape({
       companyTicker: React.PropTypes.string,

@@ -23,11 +23,10 @@ if (process.env.NODE_ENV === 'development') {
     res.sendFile(path.join(__dirname, '../client/index.html'))
   })
 } else {
+  router.use('/build', express.static(path.join(__dirname + '/../build')))
   router.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, '../build/index.html'))
   })
 }
-
-router.use('/build', express.static(path.join(__dirname, '/../build')))
 
 module.exports = router
