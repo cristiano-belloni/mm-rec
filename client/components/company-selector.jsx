@@ -30,7 +30,7 @@ const CompanySelector = (props) => {
 
 CompanySelector.propTypes = {
   onChange: React.PropTypes.func,
-  selectedCompany: React.PropTypes.string,
+  currentCompany: React.PropTypes.object,
   companies: React.PropTypes.arrayOf(
     React.PropTypes.shape({
       companyTicker: React.PropTypes.string,
